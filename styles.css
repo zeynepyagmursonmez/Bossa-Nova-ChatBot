@@ -201,3 +201,19 @@ footer {
     font-size: 1.5rem;
     font-weight: bold;
 }
+
+/* Checkout link styled as a button */
+a[href="Checkout"] {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #f1c40f;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+a[href="Checkout"]:hover {
+    color: red;
+}
+
