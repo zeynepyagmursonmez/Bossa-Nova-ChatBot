@@ -46,6 +46,7 @@
         const userMessage = `<p><strong>You:</strong> ${input}</p>`;
         const botMessage = `<p><strong>Bossa Nova:</strong> ${response}</p>`;
         
+        // Append user and bot messages
         chatbotBody.innerHTML += userMessage + botMessage;
 
         // Scroll to the bottom of the chat
