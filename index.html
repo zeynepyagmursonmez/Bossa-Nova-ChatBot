@@ -5,24 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>BOSSA NOVA Coffee Store</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
         <nav>
-            <!-- Your header content goes here -->
+            <div class="logo">
+                <img src="https://i.ibb.co/QY44w11/Ekran-g-r-nt-s-2024-09-06-102618.png" alt="BOSSA NOVA Logo" class="logo-image">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <div class="cart">
+                <a href="#">Cart</a>
+            </div>
         </nav>
     </header>
 
     <section class="products-section">
-        <!-- Your products section -->
+        <h1>Our Coffee Selections</h1>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="https://i.ibb.co/qR98DjW/Ekran-g-r-nt-s-2024-09-06-004603.png" alt="Bossa Nova Coffee Bean">
+                <h3>Bossa Nova Coffee Bean</h3>
+                <p>Price: 240.00 TL</p>
+            </div>
+            <div class="product-card">
+                <img src="https://i.ibb.co/3vM4h2x/Ekran-g-r-nt-s-2024-09-06-004916.png" alt="Bossa Nova Filter Coffee">
+                <h3>Bossa Nova Filter Coffee</h3>
+                <p>Price: 220.00 TL</p>
+            </div>
+            <div class="product-card">
+                <img src="https://i.ibb.co/QNQwC0W/Ekran-g-r-nt-s-2024-09-06-004122.png" alt="Bossa Nova Turkish Coffee">
+                <h3>Bossa Nova Turkish Coffee</h3>
+                <p>Price: 180.00 TL</p>
+            </div>
+            <div class="product-card">
+                <img src="https://i.ibb.co/9TWVPmX/Ekran-g-r-nt-s-2024-09-06-004726.png" alt="Bossa Nova Espresso Coffee">
+                <h3>Bossa Nova Espresso Coffee</h3>
+                <p>Price: 250.00 TL</p>
+            </div>
+        </div>
     </section>
 
     <footer>
-        <!-- Your footer content -->
+        <p>© 2024 BOSSA NOVA Coffee Store | All Rights Reserved</p>
     </footer>
 
-    <!-- Chatbot HTML goes here -->
+    <!-- Chatbot container -->
     <div class="chatbot-container">
         <div class="chatbot-box" id="chatbot-box">
             <p>Ask Bossa Nova</p>
@@ -34,7 +67,7 @@
             </div>
             <div class="chatbot-body">
                 <p>Hello! How can I assist you today?</p>
-                <!-- Chatbot messages will go here -->
+                <!-- Chatbot messages will be appended here -->
             </div>
             <div class="chatbot-footer">
                 <input type="text" id="chatbot-input" placeholder="Type a message...">
@@ -43,7 +76,7 @@
         </div>
     </div>
 
-    <!-- JavaScript for the chatbot -->
+    <!-- JavaScript for chatbot functionality -->
     <script>
         // Show chatbot when clicking the "Ask Bossa Nova" box
         document.getElementById('chatbot-box').addEventListener('click', function() {
@@ -59,7 +92,6 @@
         document.getElementById('send-btn').addEventListener('click', function() {
             const input = document.getElementById('chatbot-input').value.toLowerCase().trim();
             
-            // Check if the input is not empty
             if (input === '') {
                 return;  // Do nothing if the input is empty
             }
@@ -67,21 +99,37 @@
             let response = '';
 
             // Check the user's input and provide the appropriate response
-            switch(input) {
+            switch (input) {
                 case 'what is coffee?':
                     response = "Coffee is a beverage made from roasted coffee beans.";
                     break;
-                // Add more cases for different questions
+                case 'what are the characteristics of coffee beans?':
+                    response = "Coffee beans are seeds of the coffee plant used to make coffee.";
+                    break;
+                case 'what are the characteristics of filter coffee?':
+                    response = "Filter coffee is brewed by passing water through ground coffee, producing a smooth coffee.";
+                    break;
+                case 'what are the characteristics of turkish coffee?':
+                    response = "Turkish coffee is a strong, unfiltered coffee made by boiling finely ground beans with water.";
+                    break;
+                case 'what are the characteristics of espresso coffee?':
+                    response = "Espresso is a concentrated coffee brewed by forcing hot water under pressure through finely ground coffee.";
+                    break;
+                case 'i had a problem with my coffee, what should i do?':
+                    response = "We are sorry to hear that! Please contact customer service for assistance.";
+                    break;
+                case 'are there any promotions and discounts?':
+                    response = "Currently, our prices are fixed and there are no ongoing promotions.";
+                    break;
                 default:
-                    response = "I don't know, please ask another question.";
+                    response = "I'm not sure about that. Please ask another question.";
             }
 
-            // Display the chatbot's response
+            // Append the user input and chatbot response
             const chatbotBody = document.querySelector('.chatbot-body');
             const userMessage = `<p><strong>You:</strong> ${input}</p>`;
             const botMessage = `<p><strong>Bossa Nova:</strong> ${response}</p>`;
             
-            // Append user and bot messages to the chat window
             chatbotBody.innerHTML += userMessage + botMessage;
 
             // Scroll to the bottom of the chat
