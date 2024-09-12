@@ -1,4 +1,113 @@
-/* General styles for your chatbot */
+/* General styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #002f2f;
+    padding: 1rem 2rem;
+    color: white;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    width: 200px;
+    height: auto;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 1.5rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+}
+
+.cart a {
+    background-color: #f1c40f;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #002f2f;
+    font-weight: bold;
+}
+
+/* Product section */
+.products-section {
+    padding: 2rem;
+    text-align: center;
+}
+
+.products-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #002f2f;
+}
+
+.product-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.product-card {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    width: 220px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.product-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+
+.product-card p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+/* Footer */
+footer {
+    background-color: #002f2f;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+}
+
+/* Chatbot Styles */
 .chatbot-container {
     position: fixed;
     bottom: 20px;
@@ -73,4 +182,10 @@
 #send-btn:hover {
     background-color: #f1c40f;
     color: #002f2f;
+}
+
+/* Close Button */
+#close-chatbot {
+    font-size: 1.5rem;
+    font-weight: bold;
 }
