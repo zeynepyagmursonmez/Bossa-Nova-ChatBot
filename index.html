@@ -90,16 +90,17 @@
 
         // Functionality for answering questions
         document.getElementById('send-btn').addEventListener('click', function() {
-            const input = document.getElementById('chatbot-input').value.toLowerCase().trim();
+            const input = document.getElementById('chatbot-input').value.trim();
             
             if (input === '') {
+                alert("Please enter a question!");  // Alert if no input is provided
                 return;  // Do nothing if the input is empty
             }
             
             let response = '';
 
             // Check the user's input and provide the appropriate response
-            switch (input) {
+            switch (input.toLowerCase()) {
                 case 'what is coffee?':
                     response = "Coffee is a beverage made from roasted coffee beans.";
                     break;
