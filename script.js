@@ -12,6 +12,12 @@
     // Functionality for answering questions
     document.getElementById('send-btn').addEventListener('click', function() {
         const input = document.getElementById('chatbot-input').value.toLowerCase().trim();
+        
+        // Check if the input is not empty
+        if (input === '') {
+            return;  // Do nothing if the input is empty
+        }
+        
         let response = '';
 
         // Check the user's input and provide the appropriate response
@@ -46,7 +52,7 @@
         const userMessage = `<p><strong>You:</strong> ${input}</p>`;
         const botMessage = `<p><strong>Bossa Nova:</strong> ${response}</p>`;
         
-        // Append user and bot messages
+        // Append user and bot messages to the chat window
         chatbotBody.innerHTML += userMessage + botMessage;
 
         // Scroll to the bottom of the chat
